@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  server1:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./temp-server
+    volumes:
+      - /usr/src/app/node_modules
+      - ./temp-server:/usr/src/app
+
+  server2:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./temp-server2
+    volumes:
+      - /usr/src/app/node_modules
+      - ./temp-server2:/usr/src/app
+
+  nginx:
+    # 재시작 정책
+    # 죽었을 때 항상 재시작
+    restart: always
+    build: ./nginx
+    ports:
+      - "3000:80"
