@@ -3,21 +3,21 @@
   "containerDefinitions": [
     {
       "name": "server_v1",
-      "image": "170360853218.dkr.ecr.ap-northeast-2.amazonaws.com/server_v1",
+      "image": "170360853218.dkr.ecr.ap-northeast-2.amazonaws.com/demo-server-1:latest",
       "hostname": "server1",
       "essential": false,
       "memory": 128
     },
     {
       "name": "server_v2",
-      "image": "170360853218.dkr.ecr.ap-northeast-2.amazonaws.com/server_v2",
+      "image": "170360853218.dkr.ecr.ap-northeast-2.amazonaws.com/demo-server-2:latest",
       "hostname": "server2",
       "essential": false,
       "memory": 128
     },
     {
       "name": "nginx",
-      "image": "170360853218.dkr.ecr.ap-northeast-2.amazonaws.com/nginx",
+      "image": "170360853218.dkr.ecr.ap-northeast-2.amazonaws.com/demo-nginx:latest",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [

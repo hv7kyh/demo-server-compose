@@ -7,7 +7,7 @@ services:
       context: ./demo-server-1
     volumes:
       - /usr/src/app/node_modules
-      - ./temp-server:/usr/src/app
+      - ./demo-server-1:/usr/src/app
 
   server2:
     build:
@@ -15,12 +15,12 @@ services:
       context: ./demo-server-2
     volumes:
       - /usr/src/app/node_modules
-      - ./temp-server2:/usr/src/app
+      - ./demo-server-2:/usr/src/app
 
   nginx:
     # 재시작 정책
     # 죽었을 때 항상 재시작
     restart: always
-    build: ./nginx
+    build: ./demo-nginx
     ports:
       - "3000:80"
