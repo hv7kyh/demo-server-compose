@@ -4,7 +4,7 @@ services:
   server1:
     build:
       dockerfile: Dockerfile.dev
-      context: ./temp-server
+      context: ./demo-server-1
     volumes:
       - /usr/src/app/node_modules
       - ./temp-server:/usr/src/app
@@ -12,7 +12,7 @@ services:
   server2:
     build:
       dockerfile: Dockerfile.dev
-      context: ./temp-server2
+      context: ./demo-server-2
     volumes:
       - /usr/src/app/node_modules
       - ./temp-server2:/usr/src/app
